@@ -1,22 +1,16 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
+import { Meteor } from 'meteor/meteor';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Tracker } from 'meteor/tracker';
 
-import './main.html';
+Tracker.autorun(() => {
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
-});
+const jsx = (
+  <p>It works!</p>
+);
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+Meteor.startup(() => {
+  ReactDOM.render(jsx, document.getElementById('app'));
 });
