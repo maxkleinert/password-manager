@@ -1,5 +1,9 @@
 import { Meteor } from 'meteor/meteor';
+import { Accounts } from "./../imports/api/accounts";
 
 Meteor.startup(() => {
-  // code to run on server at startup
+  // Accounts.insert({
+  //   accountName: "AccountName",
+  //   accountPassword: "jklöjklö"
+  // });
 });
