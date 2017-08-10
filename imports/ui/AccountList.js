@@ -10,7 +10,7 @@ export default class AccountList extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className="accountList">
         {this.renderAccounts()}
       </div>
     );

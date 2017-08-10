@@ -3,7 +3,10 @@ import { Accounts } from "./../imports/api/accounts";
 
 Meteor.startup(() => {
   // Accounts.insert({
-  //   accountName: "AccountName",
+  //   accountName: 'AccountName',
   //   accountPassword: "jklöjklö"
+  // }, {
+  //   accountName: 'Blub',
+  //   accountPassword: 'asdfasdf'
   // });
 });

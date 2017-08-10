@@ -9,6 +9,7 @@ import App from './../imports/ui/App';
 Meteor.startup(() => {
   Tracker.autorun(() => {
     let accounts = Accounts.find().fetch();
-    ReactDOM.render(<App accounts={accounts}/>, document.getElementById('app'));
+    let title = "Account-Manager";
+    ReactDOM.render(<App title={title} accounts={accounts}/>, document.getElementById('app'));
   });
 });
