@@ -1,12 +1,8 @@
 import { Meteor } from 'meteor/meteor';
-import { Accounts } from "./../imports/api/accounts";
+
+import '../imports/api/users';
+import '../imports/api/account';
 
 Meteor.startup(() => {
-  // Accounts.insert({
-  //   accountName: 'AccountName',
-  //   accountPassword: "jklöjklö"
-  // }, {
-  //   accountName: 'Blub',
-  //   accountPassword: 'asdfasdf'
-  // });
+
 });

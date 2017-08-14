@@ -1,15 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import { Meteor } from 'meteor/meteor';
+import ReactDOM from 'react-dom';
 import { Tracker } from 'meteor/tracker';
 
-import { Accounts } from './../imports/api/accounts';
-import App from './../imports/ui/App';
+import { routes, onAuthChange } from '../imports/routes/routes';
+
+Tracker.autorun(() => {
+  const isAuthenticated = !!Meteor.userId();
+  onAuthChange(isAuthenticated);
+});
 
 Meteor.startup(() => {
-  Tracker.autorun(() => {
-    let accounts = Accounts.find().fetch();
-    let title = "Account-Manager";
-    ReactDOM.render(<App title={title} accounts={accounts}/>, document.getElementById('app'));
-  });
+  ReactDOM.render(routes, document.getElementById('app'));
 });
