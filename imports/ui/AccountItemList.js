@@ -27,10 +27,14 @@ export default class AccountItemList extends React.Component {
   renderAccountsListItems() {
     return this.state.accounts.map((account) => {
       return (
-        <div className="accountItem">
-          <p key={account._id}>{account.accountName} - {account.accountPassword}</p>
-          {/* ToDo -> Error */}
-          {/* <button className="button" onClick={deleteItem.bind(this)}>X</button> */}
+        <div key={account._id} className="accountItem">
+          <ul>
+            <li><span className="label">Name:</span> {account.accountName}</li>
+            <li><span className="label">Nummer:</span> {account.accountNummer}</li>
+            <li><span className="label">Password</span> {account.accountPassword}</li>
+            <li><span className="label">Url:</span> {account.accountUrl}</li>
+          </ul>
+          <button className="button" onClick={this.deleteItem.bind(this, account._id)}>X</button>
         </div>
       );
     });
