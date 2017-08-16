@@ -29,7 +29,9 @@ export default class AccountItemList extends React.Component {
       return (
         <div key={account._id} className="accountItem">
           <p><b>{account.accountName}</b></p>
+          <p>{account.accountNummer}</p>
           <p>{account.accountPassword}</p>
+          <p>{account.accountUrl}</p>
           <button className="button" onClick={this.deleteItem.bind(this, account._id)}>X</button>
         </div>
       );

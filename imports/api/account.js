@@ -9,10 +9,12 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-  'account.insert'(accountName, accountPassword) {
+  'account.insert'(accountName, accountNummer, accountPassword, accountUrl) {
     Account.insert({
       accountName,
-      accountPassword
+      accountNummer,
+      accountPassword,
+      accountUrl
     });
   },
   'account.deleteItem'(id) {
