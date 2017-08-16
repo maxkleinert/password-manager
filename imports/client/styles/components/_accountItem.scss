@@ -1,9 +1,15 @@
 .accountItem {
   background-color:white;
   color:black;
-  padding:2.5rem;
+  padding:1.5rem;
   margin:2.5rem 0;
   align-items: center;
   display: flex;
   justify-content: space-between;
+  ul {
+    list-style:none;
+    .label {
+      font-weight:bold;
+    }
+  }
 }
