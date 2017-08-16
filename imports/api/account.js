@@ -1,10 +1,11 @@
 import { Mongo } from 'meteor/mongo';
+import { Meteor } from 'meteor/meteor';
 
 export const Account = new Mongo.Collection('account');
 
 if (Meteor.isServer) {
   Meteor.publish('account', function () {
-    return Account.find();
+    return Account.find({}, {sort: {accountName: 1}});
   });
 }
 
